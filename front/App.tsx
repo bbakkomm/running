@@ -1,26 +1,11 @@
 import { NavigationContainer } from '@react-navigation/native';
-import React, { useState } from 'react';
-import {
-  StyleSheet,
-  Button,
-  Text,
-  TextInput,
-  View,
-  SafeAreaView,
-} from 'react-native';
-import AuthStackNavigtor from './src/navigation/AuthStackNavigtor';
+import { StyleSheet } from 'react-native';
+import RootNavigator from './src/navigations/root/RootNavigator';
 
 function App() {
-  const [name, setName] = useState('');
-
-  const handleChangeInput = (text: string) => {
-    setName(text);
-    console.log(text);
-  }
-
   return (
     <NavigationContainer>
-      <AuthStackNavigtor />
+      <RootNavigator />
     </NavigationContainer>
   );
 }
