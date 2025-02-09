@@ -5,6 +5,7 @@ import {
     Dimensions
 } from 'react-native';
 import { colors } from '../constants';
+import { devices } from '../constants/devices';
 
 interface CustomButtonProps extends PressableProps {
     label: string;
@@ -12,8 +13,6 @@ interface CustomButtonProps extends PressableProps {
     size?: 'large' | 'medium';
     inValid?: boolean;
 }
-
-const deviceHeight = Dimensions.get('screen').height;
 
 function CustomButton({
     label, 
@@ -71,14 +70,14 @@ const styles = StyleSheet.create({
     // size
     large: {
         width: '100%',
-        paddingVertical: deviceHeight > 700 ? 15 : 10,
+        paddingVertical: devices.DEVICE_SMALL ? 15 : 10,
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
     },
     medium: {
         width: '50%',
-        paddingVertical: deviceHeight > 700 ? 12 : 8,
+        paddingVertical: devices.DEVICE_SMALL ? 12 : 8,
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
